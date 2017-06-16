@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="936.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+   <children>
+      <MenuBar layoutX="-1.0" layoutY="-1.0" prefHeight="45.0" prefWidth="913.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Sell your Item">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox layoutX="17.0" layoutY="78.0" prefHeight="818.0" prefWidth="885.0" spacing="10.0">
+         <children>
+            <ImageView fx:id="imgItem" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" style="visibility: true;">
+               <viewport>
+                  <Rectangle2D height="500.0" width="400.0" />
+               </viewport>
+               <HBox.margin>
+                  <Insets top="2.0" />
+               </HBox.margin>
+            </ImageView>
+            <ImageView fx:id="imgItem1" fitHeight="300.0" fitWidth="200.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <viewport>
+                  <Rectangle2D height="500.0" width="400.0" />
+               </viewport>
+            </ImageView>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

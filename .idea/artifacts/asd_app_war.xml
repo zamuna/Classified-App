@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="asd-app:war">
+    <output-path>$PROJECT_DIR$/../asd-rest-app/target</output-path>
+    <root id="archive" name="asd-app-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="asd-app:war exploded" />
+    </root>
+  </artifact>
+</component>
