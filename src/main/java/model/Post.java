@@ -87,4 +87,19 @@ public class Post {
     public void setStatus(Boolean status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", categoryId=" + categoryId +
+                ", userId=" + userId +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", dateOfManufacture=" + dateOfManufacture +
+                ", negotiable=" + negotiable +
+                ", status=" + status +
+                '}';
+    }
 }

@@ -46,7 +46,7 @@ public class UserService extends AbstractService<User> {
         userService.insertUser(user);
         user.setName("Zamuna");
         user=userService.updateUser(user, 1l);
-        System.out.println(user);
+//        System.out.println(user);
         Long id=5l;
 //        userService.getUser(6l);
 
