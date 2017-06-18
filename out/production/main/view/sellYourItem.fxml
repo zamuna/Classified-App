@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.image.*?>
@@ -13,49 +14,39 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="936.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SellYourItemController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SellYourItemController">
   <children>
-    <Pane layoutY="17.0" prefHeight="919.0" prefWidth="913.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="17.0">
+    <Pane fx:id="paneSellurItem" layoutX="93.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="860.0" prefWidth="763.0" style="-fx-border-style: solid; -fx-border-radius: 15px; -fx-border-color: gray;" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="50.0">
       <children>
-        <MenuBar prefHeight="51.0" prefWidth="913.0">
-          <menus>
-            <Menu mnemonicParsing="false" text="Sell Your Item">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Close" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Cart">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Delete" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Logout">
-              <items>
-                <MenuItem mnemonicParsing="false" text="About" />
-              </items>
-            </Menu>
-          </menus>
-        </MenuBar>
-            <JFXTextField id="txtTitle" fx:id="txtTitle" labelFloat="true" layoutX="95.0" layoutY="198.0" prefHeight="51.0" prefWidth="674.0" promptText="Title of your Item" />
-            <JFXComboBox labelFloat="true" layoutX="95.0" layoutY="290.0" prefHeight="31.0" prefWidth="269.0" promptText="Select Category" />
-            <JFXTextField id="txtQuantity" fx:id="txtQuantity" labelFloat="true" layoutX="432.0" layoutY="281.0" prefHeight="40.0" prefWidth="338.0" promptText="Quantity Available" />
-            <JFXTextArea id="txtareaDescription" labelFloat="true" layoutX="95.0" layoutY="353.0" prefHeight="99.0" prefWidth="674.0" promptText="Detialed Item Description" />
-            <JFXComboBox id="statusCombo" editable="true" labelFloat="true" layoutX="95.0" layoutY="480.0" prefHeight="40.0" prefWidth="269.0" promptText="Status" />
-            <JFXTextField id="txtManufacture" labelFloat="true" layoutX="432.0" layoutY="486.0" prefHeight="40.0" prefWidth="338.0" promptText="Date of Manufacture" />
-            <JFXButton id="btnImage" focusTraversable="false" layoutX="95.0" layoutY="647.0" onAction="#openFile" prefHeight="40.0" prefWidth="269.0" ripplerFill="#0663c6" style="-fx-background-color: #428BCA;" text="Upload Image" textFill="#1e0202" textOverrun="CLIP">
+            <JFXTextField id="txtTitle" fx:id="txtTitle" cacheShape="false" centerShape="false" labelFloat="true" layoutX="56.0" layoutY="126.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="51.0" prefWidth="662.0" promptText="Title of your Item" scaleShape="false" snapToPixel="false">
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding></JFXTextField>
+            <JFXComboBox labelFloat="true" layoutX="32.0" layoutY="239.0" prefHeight="51.0" prefWidth="269.0" promptText="Select Category" />
+            <JFXTextField id="txtQuantity" fx:id="txtQuantity" labelFloat="true" layoutX="364.0" layoutY="250.0" prefHeight="40.0" prefWidth="338.0" promptText="Quantity Available" />
+            <JFXTextArea id="txtareaDescription" labelFloat="true" layoutX="27.0" layoutY="346.0" prefHeight="99.0" prefWidth="662.0" promptText="Detialed Item Description" />
+            <JFXComboBox id="statusCombo" editable="true" labelFloat="true" layoutX="32.0" layoutY="526.0" prefHeight="40.0" prefWidth="269.0" promptText="Status" />
+            <JFXTextField id="txtManufacture" labelFloat="true" layoutX="357.0" layoutY="526.0" prefHeight="40.0" prefWidth="338.0" promptText="Date of Manufacture" />
+            <JFXButton id="btnImage" focusTraversable="false" layoutX="47.0" layoutY="647.0" onAction="#openFile" prefHeight="40.0" prefWidth="222.0" ripplerFill="#0663c6" style="-fx-background-color: #428BCA;" text="Upload Image" textFill="#1e0202" textOverrun="CLIP">
                <effect>
                   <Blend />
                </effect>
             </JFXButton>
-            <ImageView id="img" fitHeight="114.0" fitWidth="338.0" layoutX="441.0" layoutY="573.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="img" fitHeight="114.0" fitWidth="174.0" focusTraversable="true" layoutX="344.0" layoutY="595.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/car.png" />
+               </image></ImageView>
             <JFXCheckBox id="checkboxNegotiable" allowIndeterminate="true" layoutX="102.0" layoutY="709.0" prefHeight="40.0" prefWidth="269.0" selected="true" text="Negotiable" />
-            <JFXButton layoutX="441.0" layoutY="771.0" prefHeight="51.0" prefWidth="338.0" style="-fx-background-color: #428BCA;" text="Add this Item" />
-            <Label alignment="CENTER" layoutX="102.0" layoutY="84.0" prefHeight="21.0" prefWidth="662.0" text="Sell Your Item" textAlignment="CENTER" underline="true" wrapText="true">
+            <JFXButton layoutX="293.0" layoutY="749.0" prefHeight="51.0" prefWidth="338.0" style="-fx-background-color: #428BCA;" text="Add this Item" />
+            <Label alignment="CENTER" layoutX="101.0" layoutY="42.0" prefHeight="21.0" prefWidth="662.0" text="Sell Your Item" textAlignment="CENTER" underline="true" wrapText="true">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
             </Label>
       </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
     </Pane>
   </children>
 </AnchorPane>

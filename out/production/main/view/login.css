@@ -21,3 +21,14 @@
     -fx-background-color: white;
     -fx-padding: 20px;
 }
+
+.imgView{
+    -fx-border-style: solid;
+    -fx-border-color: #333333;
+    -fx-border-radius: 10 10 0 0;
+    -fx-orientation: vertical;
+}
+#paneSellurItem{
+    -fx-background-color: aliceblue;
+    -fx-background-color: aliceblue;
+}
