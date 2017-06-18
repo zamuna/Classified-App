@@ -1,8 +1,12 @@
 package model;
 
+import jdk.Exported;
+
 /**
  * Created by 985552 on 6/15/2017.
  */
+
+
 public class Category {
     private Long id;
     private String name;

@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import model.User;
+import service.UserService;
 
 import java.io.File;
 
@@ -62,6 +64,15 @@ public class SellYourItemController extends Application{
 //            imgLabel.setText(file.getName());
         }
 
+    }
+
+    public User submitData(){
+        UserService userService = new UserService(User.class);
+        User user = new User();
+        //setter
+        //constructor
+        user = userService.insertUser(user);
+        return user;
     }
 
     public static void main(String[] args) {
