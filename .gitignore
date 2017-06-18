@@ -1,2 +1,7 @@
 javafxdemo.iml
-src/main/
+src/main/main.iml
+out
+target
+.idea
+
+*.iml

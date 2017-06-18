@@ -1,7 +1,6 @@
 package service;
 
 import model.Post;
-import model.Post;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -27,7 +26,7 @@ public class PostService extends AbstractService<Post> {
     }
 
     public Post getPost(Long post){
-        Post post1=get(post.toString(),post);
+        Post post1= getById(post.toString());
         return post1;
     }
     public List<Post> getAllPost(){

@@ -25,7 +25,7 @@ public class MessageService extends AbstractService<Message> {
     }
 
     public Message getMessage(Long message){
-        Message message1=get(message.toString(),message);
+        Message message1= getById(message.toString());
         return message1;
     }
     public List<Message> getAllMessage(){

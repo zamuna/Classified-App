@@ -9,31 +9,10 @@ import java.util.Map;
 /**
  * Created by Zamuna on 6/17/2017.
  */
-public class UserService extends AbstractService<User> {
+public class UserService extends AbstractService<User> implements IService<User> {
 
     public UserService(Class<User> clazz) {
         super(clazz);
-    }
-
-    public User insertUser(User user){
-        System.out.println("User : "+user);
-        User user1 = post(null, user);
-        return user1;
-    }
-
-    public User updateUser(User user, Long id){
-        System.out.println("Update User");
-        User user1=put(id.toString(),user);
-        return user1;
-    }
-
-    public User getUser(Long user){
-        User user1=get(user.toString(),user);
-        return user1;
-    }
-    public List<User> getAllUser(){
-//        List<User> users=getAll(null)
-        return null;
     }
 
     public static void main(String[] args) {
@@ -43,12 +22,44 @@ public class UserService extends AbstractService<User> {
         user.setName("Zam");
         user.setPassword("1234");
         user.setPhone("12345678");
-        userService.insertUser(user);
+        userService.insert(user);
         user.setName("Zamuna");
-        user=userService.updateUser(user, 1l);
+        Object obj=userService.update(user, "1");
 //        System.out.println(user);
         Long id=5l;
 //        userService.getUser(6l);
+    }
 
+    @Override
+    public Object insert(User user) {
+        System.out.println("User : "+user);
+        Object o = post(null, user, User.class);
+        if (isSuccess(o)){
+            return getData(o);
+        }else {
+            return getErrorMsg(o);
+        }
+    }
+
+    @Override
+    public Object update(User user, String id) {
+        System.out.println("Update User");
+        Object o=put(id.toString(),user);
+        if (isSuccess(o)){
+            return getData(o);
+        }else {
+            return getErrorMsg(o);
+        }
+    }
+
+    @Override
+    public User get(String id) {
+        User user1=getById(id);
+        return user1;
+    }
+
+    @Override
+    public List<User> getAll() {
+        return null;
     }
 }

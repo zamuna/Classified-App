@@ -1,7 +1,6 @@
 package service;
 
 import model.Category;
-import model.Category;
 
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class CategoryService extends AbstractService<Category> {
     }
 
     public Category getCategory(Long category){
-        Category category1=get(category.toString(),category);
+        Category category1= getById(category.toString());
         return category1;
     }
     public List<Category> getAllCategory(){
