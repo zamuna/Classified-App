@@ -1,5 +1,9 @@
 package model;
 
+import com.asd.framework.validation.constraints.Email;
+import com.asd.framework.validation.constraints.Number;
+import com.asd.framework.validation.constraints.Password;
+
 /**
  * Created by 985552 on 6/15/2017.
  */
