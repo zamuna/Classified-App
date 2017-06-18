@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.GridPane?>
 
-<GridPane alignment="TOP_LEFT" gridLinesVisible="true" hgap="10.0" prefHeight="624.0" prefWidth="599.00022207031" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<GridPane alignment="TOP_LEFT" gridLinesVisible="true" hgap="10.0" prefHeight="624.0" prefWidth="599.00022207031" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
   <children>
     <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="SELECTED_TAB" GridPane.columnIndex="0" GridPane.rowIndex="0">
       <tabs>
@@ -21,9 +21,8 @@
               <children>
                 <Pane id="login-pane-id" layoutX="79.0" layoutY="95.0" prefHeight="330.0" prefWidth="441.0" style="&#10;">
                   <children>
-                    <HBox alignment="BOTTOM_RIGHT" layoutX="157.0" layoutY="198.0" prefHeight="70.0" prefWidth="169.0" />
-                              <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="69.0" layoutY="69.0" prefHeight="47.0" prefWidth="303.0" promptText="Email Address" />
-                              <JFXPasswordField fx:id="txtPswd" labelFloat="true" layoutX="63.0" layoutY="165.0" prefHeight="50.0" prefWidth="300.0" promptText="Password" />
+                              <JFXTextField fx:id="txtEmailLogin" labelFloat="true" layoutX="69.0" layoutY="50.0" prefHeight="47.0" prefWidth="303.0" promptText="Email Address" />
+                              <JFXPasswordField fx:id="txtPswdLogin" labelFloat="true" layoutX="63.0" layoutY="165.0" prefHeight="50.0" prefWidth="300.0" promptText="Password" />
                               <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="66.0" layoutY="260.0" onAction="#login" prefHeight="50.0" prefWidth="298.0" style="-fx-background-color: #5CB85C; -fx-border-radius: 15px;" text="Login" textFill="#fcf5f5">
                                  <font>
                                     <Font size="18.0" />
@@ -42,13 +41,13 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <Pane id="paneId" layoutX="48.0" layoutY="58.0" prefHeight="438.0" prefWidth="510.0">
+                <Pane id="paneId" layoutX="26.0" layoutY="31.0" prefHeight="537.0" prefWidth="547.0">
                            <children>
-                              <JFXTextField fx:id="txtName" labelFloat="true" layoutX="53.0" layoutY="14.0" prefHeight="54.0" prefWidth="405.0" promptText="User Name" />
-                              <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="54.0" layoutY="98.0" prefHeight="54.0" prefWidth="405.0" promptText="Email" />
-                              <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="51.0" layoutY="191.0" prefHeight="57.0" prefWidth="412.0" promptText="Password" />
-                              <JFXTextField fx:id="txtPhone" labelFloat="true" layoutX="55.0" layoutY="274.0" prefHeight="54.0" prefWidth="405.0" promptText="Phone Number" />
-                              <JFXButton fx:id="btnSignUp" buttonType="RAISED" layoutX="55.0" layoutY="365.0" onAction="#signUp" prefHeight="50.0" prefWidth="405.0" style="-fx-background-color: #5CB85C; -fx-border-radius: 15px;" text="SignUp" textFill="#f5f3f3">
+                              <JFXTextField fx:id="txtNameSignUp" labelFloat="true" layoutX="55.0" layoutY="75.0" prefHeight="54.0" prefWidth="405.0" promptText="User Name" />
+                              <JFXTextField fx:id="txtEmailSignUp" labelFloat="true" layoutX="55.0" layoutY="166.0" prefHeight="54.0" prefWidth="405.0" promptText="Email" />
+                              <JFXPasswordField fx:id="txtPasswordSignUp" labelFloat="true" layoutX="52.0" layoutY="249.0" prefHeight="57.0" prefWidth="412.0" promptText="Password" />
+                              <JFXTextField fx:id="txtPhoneSignUp" labelFloat="true" layoutX="55.0" layoutY="346.0" prefHeight="54.0" prefWidth="405.0" promptText="Phone Number" />
+                              <JFXButton fx:id="btnSignUp" buttonType="RAISED" layoutX="55.0" layoutY="435.0" onAction="#signUp" prefHeight="50.0" prefWidth="405.0" style="-fx-background-color: #5CB85C; -fx-border-radius: 15px;" text="SignUp" textFill="#f5f3f3">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>

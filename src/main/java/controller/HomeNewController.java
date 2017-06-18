@@ -35,7 +35,7 @@ public class HomeNewController extends Application {
     public void start(Stage primaryStage) throws Exception {
         // loading FXML resources
         // note that we don't need PaneTwo in this class
-
+        System.out.println("HomeNew Controller");
         URL menuBarUrl = getClass().getResource("/view/myMenus.fxml");
         MenuBar bar = FXMLLoader.load( menuBarUrl );
 
@@ -62,6 +62,7 @@ public class HomeNewController extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
     @FXML
     void sellYourItem(ActionEvent event) {
 
