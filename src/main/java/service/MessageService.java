@@ -3,7 +3,9 @@ package service;
 import model.Message;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Zamuna on 6/18/2017.
@@ -29,6 +31,12 @@ public class MessageService extends AbstractService<Message> implements IService
        message.setReceiverId(1L);
        message.setSenderId(2L);
        message.setText("Hello There");
+
+        Map<String, String> map = new HashMap<>();
+        String token = "ac59789228894429a678be5f4e2e6a85";
+        map.put("Authorization", "Bearer "+token);
+        messageService.setMap(map);
+
         messageService.insert(message);
 //        message=messageService.updateMessage(message, 1l);
 //        System.out.println(message);

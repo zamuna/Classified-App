@@ -3,7 +3,9 @@ package service;
 import model.Category;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Zamuna on 6/18/2017.
@@ -19,6 +21,12 @@ public class CategoryService extends AbstractService<Category> implements IServi
         Category category=new Category();
         category.setName("Books");
         category.setDescription("This is book category");
+
+        Map<String, String> map = new HashMap<>();
+        String token = "ac59789228894429a678be5f4e2e6a85";
+        map.put("Authorization", "Bearer "+token);
+        categoryService.setMap(map);
+
         categoryService.insert(category);
 //        category.setName("Book");
 //        category=categoryService.updateCategory(category, 1l);
