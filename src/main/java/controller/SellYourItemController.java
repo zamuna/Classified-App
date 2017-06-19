@@ -26,6 +26,8 @@ import javax.naming.Context;
 import java.io.*;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.io.File;
+import java.util.List;
 
 /**
  * Created by Zamuna on 6/14/2017.
@@ -136,10 +138,18 @@ public class SellYourItemController extends Application{
     }
 
 
-    public Post submitData(){
-        PostService postService=new PostService(Post.class);
-        Post post=new Post();
-        return post;
+    public User submitData(){
+        UserService userService = new UserService(User.class);
+        User user = new User();
+        //setter
+        //constructor
+        Object obj = userService.insert(user);
+        if (userService.isSuccess(user)){
+            user = userService.getData(obj);
+        }else {
+            //list of error message
+        }
+        return user;
     }
 
     public static void main(String[] args) {

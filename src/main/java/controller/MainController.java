@@ -1,5 +1,6 @@
 package controller;
 
+import com.asd.framework.error.ErrorMessage;
 import com.classified.login.ProxyLogin;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -8,16 +9,11 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.User;
-import service.PostService;
 import service.UserService;
-
-import javax.naming.Context;
-import java.awt.*;
 
 
 public class MainController extends Application {
@@ -102,7 +98,12 @@ public class MainController extends Application {
         user.setEmail(email);
         user.setPassword(password);
         user.setPhone(phNo);
-        User userNew = userService.insertUser(user);
+       Object o = userService.insert(user);
+        if (userService.isSuccess(o)){
+             user =userService.getData(o);
+        }else {
+             java.util.List<ErrorMessage> em = userService.getErrorMsg(o);
+        }
     }
 
 

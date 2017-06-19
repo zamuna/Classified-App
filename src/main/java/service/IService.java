@@ -3,12 +3,11 @@ package service;
 import java.util.List;
 
 /**
- * Created by Zamuna on 6/17/2017.
+ * Created by Crawlers on 6/18/2017.
  */
 public interface IService<T> {
-    T get(String url, Long id);
-    List<T> getAll(String url, String searchText, List<String> searchFields, Integer offset, Integer limit);
-    T post(String url, T t);
-    T put(String url, T t);
-    String delete(String url, T t);
+    Object insert(T t);
+    Object update(T t, String id);
+    T get(String id);
+    List<T> getAllData(String url, String searchText, Integer offset, Integer limit);
 }
