@@ -55,6 +55,19 @@ public class HomeNewController extends Application {
         AnchorPane paneOne;
         paneOne = FXMLLoader.load( paneOneUrl );
 
+        root.setTop(bar);
+        root.setCenter(paneOne);
+
+        Scene scene = new Scene(root, 640, 480);
+        scene.getStylesheets()
+                .add(getClass()
+                        .getResource("/view/login.css")
+                        .toExternalForm());
+
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
         JFXTreeTableColumn<Post,String> jfxTreeTableColumn=new JFXTreeTableColumn<>("PostName");
         jfxTreeTableColumn.setPrefWidth(150);
         jfxTreeTableColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Post, String>, ObservableValue<String>>() {
@@ -70,24 +83,13 @@ public class HomeNewController extends Application {
         posts.add(post);
         posts.add(new Post());
         final TreeItem<Post> root1=new RecursiveTreeItem<Post>(posts, RecursiveTreeObject::getChildren);
-//        treeTableView.getColumns().setAll(jfxTreeTableColumn);
+        treeTableView.getColumns().setAll(jfxTreeTableColumn);
         treeTableView.setRoot(root1);
         treeTableView.setShowRoot(false);
 
         // constructing our scene using the static root
 
-        root.setTop(bar);
-        root.setCenter(paneOne);
 
-        Scene scene = new Scene(root, 640, 480);
-        scene.getStylesheets()
-                .add(getClass()
-                        .getResource("/view/login.css")
-                        .toExternalForm());
-
-
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
 
     public static void main(String[] args) {

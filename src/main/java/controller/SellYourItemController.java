@@ -25,6 +25,7 @@ import service.UserService;
 import javax.naming.Context;
 import java.io.*;
 import java.time.LocalDate;
+import java.util.Arrays;
 
 /**
  * Created by Zamuna on 6/14/2017.
@@ -104,6 +105,7 @@ public class SellYourItemController extends Application{
         Parent root=loader.load();
         primaryStage.setTitle("Classified Ads ");
         primaryStage.setScene(new Scene(root, 800, 675));
+//        txtStatus.getItems().add(1);
 //        root.getStylesheets().add(Main.class.getResource("/view/login.css").toExternalForm());
         primaryStage.show();
 
