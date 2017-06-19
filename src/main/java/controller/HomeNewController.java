@@ -13,12 +13,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.Post;
@@ -33,6 +31,9 @@ import java.util.Random;
 public class HomeNewController extends Application {
     @FXML
     private JFXTreeTableView<Post> treeTableView;
+
+    @FXML
+    private TitledPane titledPane;
     // Creating a static root to pass to the controller
     private static BorderPane root = new BorderPane();
     /**
@@ -50,7 +51,7 @@ public class HomeNewController extends Application {
         URL menuBarUrl = getClass().getResource("/view/myMenus.fxml");
         MenuBar bar = FXMLLoader.load( menuBarUrl );
 
-        URL paneOneUrl = getClass().getResource("/view/homeNew.fxml");
+        URL paneOneUrl = getClass().getResource("/view/home.fxml");
         AnchorPane paneOne;
         paneOne = FXMLLoader.load( paneOneUrl );
 
@@ -62,6 +63,12 @@ public class HomeNewController extends Application {
                 .add(getClass()
                         .getResource("/view/login.css")
                         .toExternalForm());
+
+        titledPane=new TitledPane();
+        TilePane tilePane=new TilePane();
+        Label lbl=new Label("Hello");
+        titledPane.setText("New One");
+        getRoot().getChildren().add(lbl);
 
         primaryStage.setScene(scene);
 
@@ -104,6 +111,19 @@ public class HomeNewController extends Application {
     public void showCategory(ActionEvent actionEvent) {
         try {
             URL paneOneUrl = getClass().getResource("/view/category.fxml");
+            AnchorPane paneOne = FXMLLoader.load( paneOneUrl);
+
+            BorderPane border = HomeNewController.getRoot();
+            border.setCenter(paneOne);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void home(ActionEvent actionEvent) {
+        try {
+            URL paneOneUrl = getClass().getResource("/view/home.fxml");
             AnchorPane paneOne = FXMLLoader.load( paneOneUrl);
 
             BorderPane border = HomeNewController.getRoot();

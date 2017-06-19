@@ -8,7 +8,7 @@ public class Message {
     private Long senderId;
     private Long receiverId;
     private String text;
-    private Boolean read;
+    private Boolean isRead;
 
     public Long getId() {
         return id;
@@ -42,11 +42,11 @@ public class Message {
         this.text = text;
     }
 
-    public Boolean getRead() {
-        return read;
+    public Boolean getIsRead() {
+        return isRead;
     }
 
-    public void setRead(Boolean read) {
-        this.read = read;
+    public void setIsRead(Boolean read) {
+        this.isRead = isRead;
     }
 }

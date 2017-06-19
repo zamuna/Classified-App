@@ -8,25 +8,22 @@
 
 <MenuBar xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeNewController">
     <menus>
+      <Menu mnemonicParsing="false" text="Home">
+         <items>
+            <MenuItem fx:id="menuHome" mnemonicParsing="false" onAction="#home" text="Home" />
+         </items>
+      </Menu>
         <Menu mnemonicParsing="false" text="Sell Your Item">
             <items>
-                <MenuItem fx:id="displayOne" mnemonicParsing="false"  text="Sell Your Item" onAction="#sellYourItem"  />
+                <MenuItem fx:id="displayOne" mnemonicParsing="false" onAction="#sellYourItem" text="Sell Your Item" />
             </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Add Category">
             <items>
-                <MenuItem fx:id="menuCategory" mnemonicParsing="false"  text="Sell Your Item" onAction="#showCategory"  />
+                <MenuItem fx:id="menuCategory" mnemonicParsing="false" onAction="#showCategory" text="Add Category" />
+            <MenuItem fx:id="menuCategory1" mnemonicParsing="false" onAction="#showCategory" text="Update Category" />
             </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Categories">
-            <items>
-                <MenuItem fx:id="displayTwo" mnemonicParsing="false"  text="Categories" />
-            </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Cart">
-            <items>
-                <MenuItem fx:id="displayThree" mnemonicParsing="false"  text="Cart" />
-            </items>
-        </Menu>
+      <Menu mnemonicParsing="false" text="Logout" />
     </menus>
 </MenuBar>

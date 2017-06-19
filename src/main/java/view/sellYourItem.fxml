@@ -16,38 +16,40 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SellYourItemController">
   <children>
-    <Pane fx:id="paneSellurItem" layoutX="93.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="860.0" prefWidth="763.0" style="-fx-border-style: solid; -fx-border-radius: 15px; -fx-border-color: gray;" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="50.0">
+    <Pane fx:id="paneSellurItem" layoutX="59.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="898.0" prefWidth="954.0" style="-fx-border-style: solid; -fx-border-radius: 15px; -fx-border-color: gray;" AnchorPane.bottomAnchor="168.0" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="907.0" AnchorPane.topAnchor="14.0">
       <children>
-            <JFXTextField id="txtTitle" fx:id="txtTitle" cacheShape="false" centerShape="false" labelFloat="true" layoutX="33.0" layoutY="129.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="51.0" prefWidth="662.0" promptText="Title of your Item" scaleShape="false" snapToPixel="false">
+            <JFXTextField id="txtTitle" fx:id="txtTitle" cacheShape="false" centerShape="false" labelFloat="true" layoutX="33.0" layoutY="103.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="51.0" prefWidth="662.0" promptText="Title of your Item" scaleShape="false" snapToPixel="false">
                <padding>
                   <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-               </padding></JFXTextField>
-            <JFXComboBox fx:id="txtCategory" labelFloat="true" layoutX="32.0" layoutY="239.0" prefHeight="51.0" prefWidth="269.0" promptText="Select Category" value="1" />
-            <JFXTextField id="txtQuantity" fx:id="txtQuantity" labelFloat="true" layoutX="364.0" layoutY="250.0" prefHeight="40.0" prefWidth="338.0" promptText="Quantity Available" />
-            <JFXTextArea id="txtareaDescription" fx:id="txtDetails" labelFloat="true" layoutX="27.0" layoutY="346.0" prefHeight="99.0" prefWidth="662.0" promptText="Detialed Item Description" />
-            <JFXComboBox id="statusCombo" fx:id="txtStatus" editable="true" labelFloat="true" layoutX="32.0" layoutY="526.0" prefHeight="40.0" prefWidth="269.0" promptText="Status" value="0"/>
-            <JFXTextField id="txtManufacture" fx:id="txtManufacture" labelFloat="true" layoutX="357.0" layoutY="526.0" prefHeight="40.0" prefWidth="338.0" promptText="Date of Manufacture" />
-            <JFXButton id="btnImage" fx:id="btnImageUpload" focusTraversable="false" layoutX="66.0" layoutY="801.0" onAction="#openFile" prefHeight="40.0" prefWidth="222.0" ripplerFill="#0663c6" style="-fx-background-color: #4CAF50;" text="Upload Image" textFill="#1e0202" textOverrun="CLIP">
+               </padding>
+            </JFXTextField>
+          <JFXComboBox fx:id="txtCategory" labelFloat="true" layoutX="32.0" layoutY="199.0" prefHeight="51.0" prefWidth="269.0" promptText="Select Category" value="1" />
+            <JFXTextField id="txtQuantity" fx:id="txtQuantity" labelFloat="true" layoutX="364.0" layoutY="210.0" prefHeight="40.0" prefWidth="338.0" promptText="Quantity Available" />
+            <JFXTextArea id="txtareaDescription" fx:id="txtDetails" labelFloat="true" layoutX="40.0" layoutY="301.0" prefHeight="99.0" prefWidth="662.0" promptText="Detialed Item Description" />
+            <JFXComboBox id="statusCombo" fx:id="txtStatus" editable="true" labelFloat="true" layoutX="32.0" layoutY="451.0" prefHeight="40.0" prefWidth="269.0" promptText="Status" />
+            <JFXTextField id="txtManufacture" fx:id="txtManufacture" labelFloat="true" layoutX="357.0" layoutY="451.0" prefHeight="40.0" prefWidth="338.0" promptText="Date of Manufacture" />
+            <JFXButton id="btnImage" fx:id="btnImageUpload" focusTraversable="false" layoutX="47.0" layoutY="645.0" onAction="#openFile" prefHeight="40.0" prefWidth="222.0" ripplerFill="#0663c6" style="-fx-background-color: #4CAF50;" text="Upload Image" textFill="#1e0202" textOverrun="CLIP">
                <effect>
                   <Blend />
                </effect>
             </JFXButton>
-            <ImageView id="img" fitHeight="114.0" fitWidth="174.0" focusTraversable="true" layoutX="393.0" layoutY="744.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="img" fitHeight="114.0" fitWidth="174.0" focusTraversable="true" layoutX="364.0" layoutY="597.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@image/car.png" />
-               </image></ImageView>
-            <JFXCheckBox id="checkboxNegotiable" allowIndeterminate="true" layoutX="32.0" layoutY="642.0" prefHeight="40.0" prefWidth="269.0" selected="true" text="Negotiable" />
-            <JFXButton fx:id="btnAddItem" layoutX="364.0" layoutY="914.0" onAction="#sellYourItem" prefHeight="51.0" prefWidth="338.0" style="-fx-background-color: #428BCA;" text="Add this Item" />
+               </image>
+            </ImageView>
+            <JFXCheckBox id="checkboxNegotiable" allowIndeterminate="true" layoutX="32.0" layoutY="524.0" prefHeight="40.0" prefWidth="269.0" selected="true" text="Negotiable" />
+            <JFXButton fx:id="btnAddItem" layoutX="350.0" layoutY="739.0" onAction="#sellYourItem" prefHeight="51.0" prefWidth="338.0" style="-fx-background-color: #428BCA;" text="Add this Item" />
             <Label alignment="CENTER" layoutX="101.0" layoutY="42.0" prefHeight="21.0" prefWidth="662.0" text="Sell Your Item" textAlignment="CENTER" underline="true" wrapText="true">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
             </Label>
-            <JFXTextField id="txtQuantity" fx:id="txtPrice" labelFloat="true" layoutX="357.0" layoutY="642.0" prefHeight="40.0" prefWidth="338.0" promptText="Set Price" />
+            <JFXTextField id="txtQuantity" fx:id="txtPrice" labelFloat="true" layoutX="357.0" layoutY="524.0" prefHeight="40.0" prefWidth="338.0" promptText="Set Price" />
       </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
-    </Pane>
+      </Pane>
   </children>
 </AnchorPane>

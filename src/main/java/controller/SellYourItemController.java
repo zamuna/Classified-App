@@ -8,6 +8,10 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Application;
+import javafx.beans.InvalidationListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -20,19 +24,18 @@ import javafx.scene.control.Separator;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import model.Category;
 import model.Post;
 import model.User;
+import service.CategoryService;
 import service.PostService;
 import service.UserService;
 
 import javax.naming.Context;
 import java.io.*;
 import java.time.LocalDate;
-import java.util.Arrays;
+import java.util.*;
 import java.io.File;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Zamuna on 6/14/2017.
@@ -42,10 +45,10 @@ public class SellYourItemController extends Application{
     private JFXTextField txtManufacture;
 
     @FXML
-    private JFXComboBox<?> txtCategory;
+    private JFXComboBox txtCategory;
 
     @FXML
-    private JFXComboBox<?> txtStatus;
+    private JFXComboBox txtStatus;
 
     @FXML
     private JFXButton btnAddItem;
@@ -123,6 +126,17 @@ public class SellYourItemController extends Application{
         primaryStage.setScene(new Scene(root, 800, 675));
 //        txtStatus.getItems().add(1);
 //        root.getStylesheets().add(Main.class.getResource("/view/login.css").toExternalForm());
+//        JFXComboBox<Label> c = new JFXComboBox<>();
+        List<Category> categories=new ArrayList<>();
+        CategoryService categoryService=new CategoryService(Category.class);
+        categories=categoryService.getAllData(null,"",10,10);
+        txtCategory.getItems().addAll(categories);
+//        txtCategory.getItems().add(new Label("Java 1.7"));
+//        txtCategory.getItems().add(new Label("Java 1.6"));
+//        txtStatus.getItems().addAll("1","0");
+//        c.getItems().add(new Label("Java 1.5"));
+//        c.setEditable(true);
+//        c.setPromptText("Select Java Version");
         primaryStage.show();
 
 

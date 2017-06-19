@@ -79,7 +79,7 @@ public class MainController extends Application {
             System.out.println("Logged in successfully " + userWithToken);
             homeNewController = new HomeNewController();
             try {
-                root = FXMLLoader.load(getClass().getResource("/view/homeNew.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/view/home.fxml"));
                 Scene scene=new Scene(root);
                 stage= (Stage) btnLogin.getScene().getWindow();
                 stage.setScene(scene);

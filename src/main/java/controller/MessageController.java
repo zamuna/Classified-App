@@ -1,6 +1,7 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -33,7 +34,7 @@ public class MessageController extends Application {
     }
 
     @FXML
-    private JFXTextField txtMessage;
+    private JFXTextArea txtMessage;
 
     @FXML
     private JFXButton btnSendMessage;
@@ -81,7 +82,7 @@ public class MessageController extends Application {
         message.setText(msg);
         message.setSenderId(1L);
         message.setReceiverId(1L);
-        message.setRead(false);
+        message.setIsRead(false);
         Map<String, String> map = new HashMap<>();
 //        map.put("Authorization", "Bearer "+MainController.tokenGlobal);
         map.put("Authorization","Bearer 7e14a8efe0ca48b0aef9688ea08f791c");
