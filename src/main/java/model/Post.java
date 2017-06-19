@@ -1,11 +1,13 @@
 package model;
 
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+
 import java.time.LocalDate;
 
 /**
  * Created by 985552 on 6/15/2017.
  */
-public class Post {
+public class Post extends RecursiveTreeObject<Post> {
     private Long id;
     private Long categoryId;
     private Long userId;
@@ -15,6 +17,7 @@ public class Post {
     private LocalDate dateOfManufacture;
     private Boolean negotiable;
     private Boolean status;
+    private String url;
 
     public Long getId() {
         return id;
@@ -87,7 +90,13 @@ public class Post {
     public void setStatus(Boolean status) {
         this.status = status;
     }
+    public String getUrl() {
+        return url;
+    }
 
+    public void setUrl(String url) {
+        this.url = url;
+    }
     @Override
     public String toString() {
         return "Post{" +

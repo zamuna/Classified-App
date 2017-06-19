@@ -1,5 +1,6 @@
 package service;
 
+import javafx.scene.image.Image;
 import model.Post;
 import model.Post;
 
@@ -34,7 +35,6 @@ public class PostService extends AbstractService<Post> {
 //        List<Post> posts=getAll(null)
         return null;
     }
-
     public static void main(String[] args) {
         PostService postService=new PostService(Post.class);
        Post post =new Post();

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -8,52 +9,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
-
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.geometry.Insets?>
+
 <AnchorPane prefHeight="936.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeNewController">
     <children>
-      <JFXMasonryPane layoutX="36.0" layoutY="8.0" prefHeight="322.0" prefWidth="520.0">
-         <children>
+      <JFXMasonryPane layoutX="36.0" layoutY="8.0" prefHeight="851.0" prefWidth="827.0" />
 
-             <ImageView layoutX="180.0" layoutY="149.0">
-                 <image>
-                     <Image url="@image/car.png" />
-                 </image>
-             </ImageView>
-             <ImageView layoutX="11.0" layoutY="149.0">
-                 <image>
-                     <Image url="@image/car.png" />
-                 </image>
-             </ImageView>
-             <ImageView layoutX="308.0" layoutY="149.0">
-                 <image>
-                     <Image url="@image/car.png" />
-                 </image>
-             </ImageView>
-             <ImageView layoutX="444.0" layoutY="157.0">
-                 <image>
-                     <Image url="@image/car.png" />
-                 </image>
-             </ImageView>
-             <ImageView layoutX="572.0" layoutY="149.0">
-                 <image>
-                     <Image url="@image/car.png" />
-                 </image>
-             </ImageView>
-             <ImageView fx:id="imgItem1" fitHeight="287.0" fitWidth="181.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" style="visibility: true;" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
-                 <image>
-                     <Image url="@image/car.png" />
-                 </image>
-                 <viewport>
-                     <Rectangle2D height="300.0" width="200.0" />
-                 </viewport>
-                 <GridPane.margin>
-                     <Insets />
-                 </GridPane.margin>
-             </ImageView>
-         </children>
-      </JFXMasonryPane>
+       <ImageView fitHeight="128.0" fitWidth="142.0" layoutX="124.0" layoutY="154.0">
+           <image>
+               <Image url="@image/car.png" />
+           </image>
+       </ImageView>
+       <ImageView layoutX="295.0" layoutY="154.0">
+           <image>
+               <Image url="@image/car.png" />
+           </image>
+       </ImageView>
+       <ImageView layoutX="452.0" layoutY="160.0">
+           <image>
+               <Image url="@image/car.png" />
+           </image>
+       </ImageView>
+       <ImageView layoutX="601.0" layoutY="160.0">
+           <image>
+               <Image url="@image/car.png" />
+           </image>
+       </ImageView>
+      <JFXTreeTableView fx:id="treeTableView" currentItemsCount="5" editable="true" layoutX="28.0" layoutY="288.0" prefHeight="390.0" prefWidth="811.0" tableMenuButtonVisible="true" />
 
     </children>
 
