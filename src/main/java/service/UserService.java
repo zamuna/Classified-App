@@ -1,6 +1,7 @@
 package service;
 
 import model.User;
+import model.UserWithToken;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -51,6 +52,10 @@ public class UserService extends AbstractService<User> implements IService<User>
         return o;
     }
 
+    public Object login(User user) {
+        Object o = post("login", user, UserWithToken.class);
+        return o;
+    }
     @Override
     public Object update(User user, String id) {
         System.out.println("Update User");

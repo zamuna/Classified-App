@@ -35,7 +35,6 @@ public class HomeNewController extends Application {
     private JFXTreeTableView<Post> treeTableView;
     // Creating a static root to pass to the controller
     private static BorderPane root = new BorderPane();
-
     /**
      * Just a root getter for the controller to use
      */
@@ -64,9 +63,7 @@ public class HomeNewController extends Application {
                         .getResource("/view/login.css")
                         .toExternalForm());
 
-
         primaryStage.setScene(scene);
-        primaryStage.show();
 
         JFXTreeTableColumn<Post,String> jfxTreeTableColumn=new JFXTreeTableColumn<>("PostName");
         jfxTreeTableColumn.setPrefWidth(150);
@@ -76,16 +73,7 @@ public class HomeNewController extends Application {
                 return (ObservableValue<String>) param.getValue();
             }
         });
-        ObservableList<Post> posts= FXCollections.observableArrayList();
-        Post post=new Post();
-        post.setTitle("Hello this is test");
-
-        posts.add(post);
-        posts.add(new Post());
-        final TreeItem<Post> root1=new RecursiveTreeItem<Post>(posts, RecursiveTreeObject::getChildren);
-        treeTableView.getColumns().setAll(jfxTreeTableColumn);
-        treeTableView.setRoot(root1);
-        treeTableView.setShowRoot(false);
+        primaryStage.show();
 
         // constructing our scene using the static root
 
@@ -111,5 +99,18 @@ public class HomeNewController extends Application {
         }
 
 
+    }
+
+    public void showCategory(ActionEvent actionEvent) {
+        try {
+            URL paneOneUrl = getClass().getResource("/view/category.fxml");
+            AnchorPane paneOne = FXMLLoader.load( paneOneUrl);
+
+            BorderPane border = HomeNewController.getRoot();
+            border.setCenter(paneOne);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

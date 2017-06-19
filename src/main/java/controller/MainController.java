@@ -13,11 +13,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.User;
+import model.UserWithToken;
 import service.UserService;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainController extends Application {
-
+     static String tokenGlobal="";
     private HomeNewController homeNewController;
     Stage stage;
     Parent root;
@@ -62,8 +66,15 @@ public class MainController extends Application {
         Object userWithToken = null;
         email = txtEmailLogin.getText();
         password = txtPswdLogin.getText();
-        ProxyLogin proxyLogin = new ProxyLogin();
-        userWithToken = proxyLogin.login(email, password);
+        UserService userService = new UserService(User.class);
+        userWithToken = userService.login(new User(email, password));
+        Map<String, String> map = new HashMap<>();
+        System.out.println("New token"+((UserWithToken)userWithToken).getToken());
+        tokenGlobal=((UserWithToken)userWithToken).getToken();
+        System.out.println(tokenGlobal+"----");
+        map.put("Authorization", "Bearer "+tokenGlobal);
+
+
         if (userWithToken != null) {
             System.out.println("Logged in successfully " + userWithToken);
             homeNewController = new HomeNewController();
@@ -72,6 +83,7 @@ public class MainController extends Application {
                 Scene scene=new Scene(root);
                 stage= (Stage) btnLogin.getScene().getWindow();
                 stage.setScene(scene);
+//                homeNewController.setToken(tokenGlobal);
                 homeNewController.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();

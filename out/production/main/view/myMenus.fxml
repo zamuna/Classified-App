@@ -13,6 +13,11 @@
                 <MenuItem fx:id="displayOne" mnemonicParsing="false"  text="Sell Your Item" onAction="#sellYourItem"  />
             </items>
         </Menu>
+        <Menu mnemonicParsing="false" text="Add Category">
+            <items>
+                <MenuItem fx:id="menuCategory" mnemonicParsing="false"  text="Sell Your Item" onAction="#showCategory"  />
+            </items>
+        </Menu>
         <Menu mnemonicParsing="false" text="Categories">
             <items>
                 <MenuItem fx:id="displayTwo" mnemonicParsing="false"  text="Categories" />

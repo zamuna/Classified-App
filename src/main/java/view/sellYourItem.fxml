@@ -22,10 +22,10 @@
                <padding>
                   <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                </padding></JFXTextField>
-            <JFXComboBox fx:id="txtCategory" labelFloat="true" layoutX="32.0" layoutY="239.0" prefHeight="51.0" prefWidth="269.0" promptText="Select Category" />
+            <JFXComboBox fx:id="txtCategory" labelFloat="true" layoutX="32.0" layoutY="239.0" prefHeight="51.0" prefWidth="269.0" promptText="Select Category" value="1" />
             <JFXTextField id="txtQuantity" fx:id="txtQuantity" labelFloat="true" layoutX="364.0" layoutY="250.0" prefHeight="40.0" prefWidth="338.0" promptText="Quantity Available" />
             <JFXTextArea id="txtareaDescription" fx:id="txtDetails" labelFloat="true" layoutX="27.0" layoutY="346.0" prefHeight="99.0" prefWidth="662.0" promptText="Detialed Item Description" />
-            <JFXComboBox id="statusCombo" fx:id="txtStatus" editable="true" labelFloat="true" layoutX="32.0" layoutY="526.0" prefHeight="40.0" prefWidth="269.0" promptText="Status" />
+            <JFXComboBox id="statusCombo" fx:id="txtStatus" editable="true" labelFloat="true" layoutX="32.0" layoutY="526.0" prefHeight="40.0" prefWidth="269.0" promptText="Status" value="0"/>
             <JFXTextField id="txtManufacture" fx:id="txtManufacture" labelFloat="true" layoutX="357.0" layoutY="526.0" prefHeight="40.0" prefWidth="338.0" promptText="Date of Manufacture" />
             <JFXButton id="btnImage" fx:id="btnImageUpload" focusTraversable="false" layoutX="66.0" layoutY="801.0" onAction="#openFile" prefHeight="40.0" prefWidth="222.0" ripplerFill="#0663c6" style="-fx-background-color: #4CAF50;" text="Upload Image" textFill="#1e0202" textOverrun="CLIP">
                <effect>

@@ -1,5 +1,8 @@
 package controller;
 
+import com.asd.framework.error.ErrorMessage;
+import com.asd.framework.restclient.ClientFactory;
+import com.asd.framework.restclient.Method;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
@@ -27,7 +30,9 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Zamuna on 6/14/2017.
@@ -65,6 +70,8 @@ public class SellYourItemController extends Application{
 
     @FXML
     void sellYourItem(ActionEvent event) {
+        System.out.println("SellController Token"+MainController.tokenGlobal);
+        System.out.println("Add Item");
         String title="";
         String category="";
         String qty="";
@@ -75,7 +82,8 @@ public class SellYourItemController extends Application{
         String price="";
 
         title=txtTitle.getText();
-        category=txtCategory.getSelectionModel().getSelectedItem().toString();
+        System.out.println(txtCategory.getSelectionModel().getSelectedItem().toString());
+//        category=txtCategory.getSelectionModel().getSelectedItem().toString();
         qty=txtQuantity.getText();
         details=txtDetails.getText();
         status= Integer.valueOf(txtStatus.getSelectionModel().getSelectedItem().toString());
@@ -91,11 +99,17 @@ public class SellYourItemController extends Application{
         Post post=new Post();
         post.setTitle(title);
         post.setDescription(details);
-        post.setDateOfManufacture(LocalDate.parse(date));
+//        post.setDateOfManufacture(LocalDate.parse(date));
         post.setPrice(Integer.parseInt(price));
         post.setUrl(url);
-        post.setCategoryId(Long.parseLong(category));
+//        post.setCategoryId(Long.parseLong(category));
         post.setStatus(((status==0) ? true : false));
+        PostService postService=new PostService(Post.class);
+        Map<String, String> map = new HashMap<>();
+        map.put("Authorization", "Bearer "+MainController.tokenGlobal);
+        postService.setMap(map);
+        Object object = postService.insert(post);
+
 
     }
 
