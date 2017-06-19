@@ -7,7 +7,9 @@ import model.User;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Zamuna on 6/18/2017.
@@ -24,31 +26,35 @@ public class PostService extends AbstractService<Post> implements IService<Post>
         return post1;
     }
     public List<Post> getAllPost(){
-//        List<Post> posts=getAll(null)
+//        List<PostItem> posts=getAll(null)
         return null;
     }
     public static void main(String[] args) {
         PostService postService=new PostService(Post.class);
        Post post =new Post();
        post.setCategoryId(1L);
-       post.setDateOfManufacture(LocalDate.now());
        post.setDescription("This is my new product");
        post.setPrice(20);
        post.setTitle("Coffee Machine");
        post.setUserId(1L);
        post.setStatus(true);
        post.setNegotiable(true);
+
+        Map<String, String> map = new HashMap<>();
+        String token = "ac59789228894429a678be5f4e2e6a85";
+        map.put("Authorization", "Bearer "+token);
+        postService.setMap(map);
         postService.insert(post);
 //        post=postService.updatePost(post, 1l);
         System.out.println(post);
-        Long id=5l;
-        postService.getPost(1l);
+        /*Long id=5l;
+        postService.getPost(1l);*/
 
     }
 
     @Override
     public Object insert(Post post) {
-        System.out.println("Post : "+post);
+        System.out.println("PostItem : "+post);
         Object o = post(null, post, Post.class);
         return o;
     }
