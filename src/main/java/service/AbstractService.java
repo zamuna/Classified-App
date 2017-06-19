@@ -61,11 +61,11 @@ public abstract class AbstractService<T> implements ClientService<T> {
     }
 
     @Override
-    public List<T> getAll(String url, String searchText, List<String> searchFields, Integer offset, Integer limit) {
+    public List<T> getAll(String url, String searchText, Integer offset, Integer limit) {
         List<T> t1 = (List<T>) ClientFactory.getClientFactory()
                 .getClient(Method.GET_ALL)
                 .headers(map)
-                .execute(getActualUrl(url), clazz);
+                .execute(getActualUrl(url)+appendQueryParam(searchText, offset,limit), clazz);
         return t1;
     }
 
@@ -85,6 +85,23 @@ public abstract class AbstractService<T> implements ClientService<T> {
             return BASE_URL;
     }
 
+    private String appendQueryParam(String searchText, Integer offset, Integer limit){
+        StringBuilder query = new StringBuilder();
+        if (searchText!=null || offset!=null ||limit!=null){
+            query.append("?");
+            if (searchText!=null&&!searchText.isEmpty()){
+                query.append("search="+searchText);
+            }
+            if (offset!=null){
+                query.append("offset="+offset);
+            }
+            if (limit!=null){
+                query.append("limit="+limit);
+            }
+        }
+        return query.toString();
+    }
+
     public Boolean isSuccess(Object obj){
         if (obj instanceof List){
             return false;
@@ -97,6 +114,6 @@ public abstract class AbstractService<T> implements ClientService<T> {
     }
 
     public List<ErrorMessage> getErrorMsg(Object obj){
-        return (List) obj;
+        return (List<ErrorMessage>) obj;
     }
 }

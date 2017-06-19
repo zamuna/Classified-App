@@ -2,31 +2,20 @@ package service;
 
 import model.Message;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by Zamuna on 6/18/2017.
  */
-public class MessageService extends AbstractService<Message> {
+public class MessageService extends AbstractService<Message> implements IService<Message>{
+    private static final List<String> searchFields = Arrays.asList("name");
     public MessageService(Class<Message> clazz) {
         super(clazz);
     }
 
-    public Message insertMessage(Message message){
-        System.out.println("Message : "+message);
-        Message message1 = post(null, message);
-        return message1;
-    }
-
-    public Message updateMessage(Message message, Long id){
-        System.out.println("Update Message");
-        Message message1=put(id.toString(),message);
-        return message1;
-    }
-
     public Message getMessage(Long message){
-        Message message1= getById(message.toString());
-        return message1;
+        return null;
     }
     public List<Message> getAllMessage(){
 //        List<Message> messages=getAll(null)
@@ -40,12 +29,36 @@ public class MessageService extends AbstractService<Message> {
        message.setReceiverId(1L);
        message.setSenderId(2L);
        message.setText("Hello There");
-        messageService.insertMessage(message);
+        messageService.insert(message);
 //        message=messageService.updateMessage(message, 1l);
 //        System.out.println(message);
         Long id=5l;
 //        messageService.getMessage(6l);
 
+    }
+
+    @Override
+    public Object insert(Message message) {
+        System.out.println("Message : "+message);
+        Object message1 = post(null, message, this.getClass());
+        return message1;
+    }
+
+    @Override
+    public Object update(Message message, String id) {
+        System.out.println("Update Message");
+        Object message1=put(id.toString(),message);
+        return message1;
+    }
+
+    @Override
+    public Message get(String id) {
+        return null;
+    }
+
+    @Override
+    public List<Message> getAllData(String url, String searchText, Integer offset, Integer limit) {
+        return getAll(url, searchText, offset, limit);
     }
 }
 

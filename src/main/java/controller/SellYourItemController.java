@@ -16,6 +16,7 @@ import model.User;
 import service.UserService;
 
 import java.io.File;
+import java.util.List;
 
 /**
  * Created by Zamuna on 6/14/2017.
@@ -71,7 +72,12 @@ public class SellYourItemController extends Application{
         User user = new User();
         //setter
         //constructor
-        user = userService.insertUser(user);
+        Object obj = userService.insert(user);
+        if (userService.isSuccess(user)){
+            user = userService.getData(obj);
+        }else {
+            //list of error message
+        }
         return user;
     }
 

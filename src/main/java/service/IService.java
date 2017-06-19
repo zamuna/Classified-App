@@ -9,5 +9,5 @@ public interface IService<T> {
     Object insert(T t);
     Object update(T t, String id);
     T get(String id);
-    List<T> getAll();
+    List<T> getAllData(String url, String searchText, Integer offset, Integer limit);
 }
